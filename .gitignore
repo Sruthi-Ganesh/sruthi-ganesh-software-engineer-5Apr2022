@@ -1,0 +1,4 @@
+restaurant-frontend/node_modules/
+restaurant-backend/.idea
+restaurant-backend/django-env/
+.idea

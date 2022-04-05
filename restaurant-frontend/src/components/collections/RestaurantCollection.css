@@ -1,0 +1,30 @@
+.restaurant-collection-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.restaurant-collection-container .header {
+  font-size: 26px;
+}
+
+.restaurant-collection-container .restaurant-collection-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restaurant-collection-container .modal-modal-title {
+  margin: 16px;
+  color: indianred;
+}
+
+.restaurant-collection-container .restaurant-collection-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.restaurant-collection-container .restaurant-collection-header .ellipsis-icon {
+  cursor: pointer;
+}

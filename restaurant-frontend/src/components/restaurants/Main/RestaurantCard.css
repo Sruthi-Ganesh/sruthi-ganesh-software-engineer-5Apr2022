@@ -1,0 +1,36 @@
+.restaurant-card {
+  width: 50%;
+  border-radius: 3px;
+  margin: 16px;
+  padding: 26px;
+  border: 1px solid gray;
+  box-shadow: 5px 3px darkgray;
+  width: 50%;
+  min-height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: lightgray;
+}
+
+.restaurant-card.card-open {
+  background-color: floralwhite;
+  color: black;
+}
+
+.restaurant-card .add-icon {
+  color: indianred !important;
+  cursor: pointer;
+}
+
+.restaurant-card .green-item {
+  color: darkgreen;
+}
+
+.restaurant-card .greyed-out-item {
+  color: gray;
+}
+
+.restaurant-card svg path {
+  stroke: indianred !important;
+}

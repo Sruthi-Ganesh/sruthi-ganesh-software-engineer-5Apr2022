@@ -1,0 +1,6 @@
+@import './definitions.css';
+
+.acting-hr {
+    border-bottom: 1px solid  var(--BORDER_DIVIDER_COLOR);
+    width: 100%;
+}
