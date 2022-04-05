@@ -1,0 +1,67 @@
+version: '3.7'
+services:
+  restaurant_nginx:
+    build: .
+    container_name: restaurant_nginx
+    restart: on-failure
+    volumes:
+      - .:/microservice:rw
+      - static_volume:/home/app/microservice/restaurant_dj/static
+    ports:
+      - 80:80
+    depends_on:
+      - restaurant_web
+  restaurant_web:
+    container_name: restaurant_web
+    build: restaurant-backend/restaurant_dj
+    command: sh -c "./entrypoint.sh &&
+      python manage.py makemigrations &&
+      python manage.py migrate &&
+      python manage.py initiate_admin &&
+      python manage.py setup_postgres_db &&
+      python manage.py collectstatic --noinput --clear &&
+      ./es_entrypoint.sh restaurant_es python manage.py search_index --rebuild -f &&
+      uwsgi --ini uwsgi.ini"
+    restart: on-failure
+    env_file: dev.env
+    volumes:
+      - .:/microservice/restaurant_dj:rw
+      - static_volume:/home/app/microservice/restaurant_dj/static
+    depends_on:
+      - restaurant_db
+      - restaurant_es
+    expose:
+      - 8000
+  restaurant_db:
+    container_name: restaurant_db
+    image: postgres:14.2-alpine
+    env_file: dev.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  restaurant_es:
+    container_name: restaurant_es
+    image: elasticsearch:7.13.4
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ports:
+      - "9200:9200"
+  restaurant_redis:
+    container_name: restaurant_redis
+    image: redis:alpine
+  restaurant_celery:
+    container_name: restaurant_celery
+    restart: on-failure
+    build:
+      context: restaurant-backend/restaurant_dj
+    command: celery -A restaurant_dj worker -l info
+    volumes:
+      - .:/microservice/restaurant_dj:rw
+    env_file: dev.env
+    depends_on:
+      - restaurant_db
+      - restaurant_redis
+
+volumes:
+  static_volume:
+  postgres_data:

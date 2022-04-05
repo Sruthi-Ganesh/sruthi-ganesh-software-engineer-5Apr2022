@@ -1,0 +1,8 @@
+{
+    "eslint.enable": true,
+    "eslint.workingDirectories": [
+        {"directory": "/Users/sruthi.ganesh/projects/restaurant-finder/restaurant-frontend/", "changeProcessCWD": true }
+    ],
+    "window.zoomLevel": 1,
+    "files.insertFinalNewline": true,
+}

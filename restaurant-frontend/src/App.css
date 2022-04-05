@@ -1,0 +1,66 @@
+@import "./components/shared/definitions.css";
+
+.App {
+  text-align: center;
+  height: 100%;
+}
+
+.base-container {
+  background-color: whitesmoke;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.base-container > :not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.MuiButton-contained {
+  background-color: orange !important;
+  margin: 8px !important;
+}
+
+.MuiButton-contained:hover {
+  background-color: lightcoral !important;
+}
+
+.MuiButton-text {
+  color: indianred !important;
+  margin: 8px !important;
+}
+
+.MuiButton-text:hover {
+  color: lightcoral !important;
+  background-color: none !important;
+}
+
+.MuiButton-outlined {
+  color: indianred !important;
+  margin: 8px !important;
+  border-color: indianred;
+}
+
+.MuiButton-outlined:hover {
+  color: lightcoral !important;
+  background-color: none !important;
+}
+
+.MuiOutlinedInput-input:focus-visible {
+  outline: orange auto 3px !important;
+}
+
+.MuiOutlinedInput-root:focus-visible {
+  outline: orange auto 3px !important;
+}
+
+.greyed-out-item {
+  color: var(--APP_GREY_COLOR);
+}

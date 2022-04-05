@@ -1,0 +1,37 @@
+@import '../../App.css';
+
+.signin-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-box>:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.base-container svg {
+    width: 100px;
+    height: 100px;
+}
+
+.base-container svg path {
+    stroke: indianred;
+}
+
+.base-container .header-container {
+    display: flex;
+    align-items: center;
+}
+
+.base-container .header-container .restaurant-name {
+    color: indianred
+}
+
+.signin-box .form-error {
+    color: red;
+}
+
+.signin-box .MuiTextField-root {
+    width: auto !important;
+}
+  

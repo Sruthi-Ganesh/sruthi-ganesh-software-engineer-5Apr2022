@@ -1,0 +1,84 @@
+@import "../shared/definitions.css";
+
+.search-container {
+  background-color: var(--HEADER_BACKGROUND_COLOR);
+  margin-bottom: 16px;
+  padding: 30px;
+}
+
+.search-container .open-now-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.search-container .open-now-box .open-now-stack {
+  align-items: center;
+}
+
+.search-container .open-now-box .open-now-stack > :not(:last-child) {
+  padding-right: 8px;
+}
+
+.search-container .chip {
+  cursor: pointer;
+}
+.search-container .chip .active {
+  background-color: var(--PRIMARY_COLOR);
+  color: white;
+}
+
+.search-container .sort {
+  cursor: pointer;
+  align-self: center;
+}
+
+.search-container .sort.active {
+  background-color: var(--PRIMARY_COLOR);
+  color: white;
+}
+
+.search-container .search-input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 0 16px;
+}
+
+.search-container .search-input-container svg {
+  height: 50px;
+}
+
+.search-container .filter-button {
+  border: 2px solid var(--PRIMARY_BUTTON_COLOR);
+  border-radius: 16px;
+  background-color: white;
+  color: var(--PRIMARY_BUTTON_COLOR);
+  width: 50%;
+  margin: 16px 0;
+  padding: 8px 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.search-container .search-input-container > :not(:last-child) {
+  margin-right: 8px;
+}
+
+input.search-text-box {
+  border: none;
+  width: 100%;
+  color: var(--SEARCH_TEXT_COLOR);
+  font-weight: 600;
+  background-color: var(--HEADER_BACKGROUND_COLOR);
+  font-size: 16px;
+  text-align: center;
+}
+
+input.search-text-box:focus-visible {
+  outline: none;
+}

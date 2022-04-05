@@ -1,0 +1,6 @@
+.filter-input {
+  align-items: center;
+}
+.filter-input > :not(:last-child) {
+  padding-right: 8px;
+}

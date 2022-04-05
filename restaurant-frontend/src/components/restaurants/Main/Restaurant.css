@@ -1,0 +1,15 @@
+.restaurant-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.restaurant-container .header {
+  font-size: 26px;
+}
+
+.restaurant-container .restaurant-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
